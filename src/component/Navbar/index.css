@@ -1,0 +1,109 @@
+.nav__menu {
+    @apply bg-container-color;
+    position: fixed;
+    inset-block: 0;
+    left: -100%;
+    width: 100%;
+    padding: 60px 30px;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    -o-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.show-menu {
+    left: 0;
+}
+
+.nav__link {
+    @apply flex items-center border-b-[1px] border-border-color;
+    column-gap: 24px;
+    padding-block: 14px;
+}
+
+.nav__icon,
+.nav__name {
+    @apply text-title-color;
+    font-size: 24px;
+}
+
+.nav__name {
+    font-weight: 500;
+}
+
+.nav__toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    @apply bg-container-color rounded-[5px];
+}
+.nav__toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    @apply bg-title-color mb-[5px];
+}
+
+.animate-toggle span:first-child {
+    transform: rotate(45deg) translate(6px,4px);
+    -webkit-transform: rotate(45deg) translate(6px,4px);
+    -moz-transform: rotate(45deg) translate(6px,4px);
+    -ms-transform: rotate(45deg) translate(6px,4px);
+    -o-transform: rotate(45deg) translate(6px,4px);
+}
+.animate-toggle span:nth-child(2) {
+    display: none;
+}
+.animate-toggle span:last-child {
+    transform: rotate(-45deg) translate(1px,1px);
+    -webkit-transform: rotate(-45deg) translate(1px,1px);
+    -moz-transform: rotate(-45deg) translate(1px,1px);
+    -ms-transform: rotate(-45deg) translate(1px,1px);
+    -o-transform: rotate(-45deg) translate(1px,1px);
+}
+
+@media (max-width:1024px) {
+    .nav__menu {
+        all: unset;
+    }
+    .nav__toggle {
+        display: none;
+    }
+    .nav {
+        position: fixed;
+        @apply flex items-center ;
+        inset-block: 0;
+        right: 30px;
+    }
+    .nav__item {
+        margin-block: 20px;
+    }
+    .nav__link {
+        padding: 0;
+        border-bottom: none;
+        @apply bg-container-color w-[50px] h-[50px] rounded-[50%] relative;
+    }
+    .nav__icon {
+        font-size: 20px;
+        margin-inline: auto;
+    }
+    .nav__name {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        height: 100%;
+        line-height: 50px;
+        padding-inline: 30px 25px;
+        @apply rounded-[30px] text-small-font-size text-white;
+    }
+    .nav__link:hover {
+        @apply text-firstColor;
+    }
+}

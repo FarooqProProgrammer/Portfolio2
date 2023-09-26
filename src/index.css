@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+  font-family: 'Mooli', sans-serif;
+}
+
+
+body,
+input,
+textarea {
+  @apply text-normal-font-size font-[500];
+}
+
+body {
+  @apply bg-body-color text-text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-title-color font-[700];
+}
+
+button,
+input,
+textarea {
+  @apply bg-transparent border-none outline-none;
+}
+
+img {
+  @apply max-w-full;
+}
